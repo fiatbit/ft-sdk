@@ -266,7 +266,7 @@ It should be noted that developers need to confirm the environment called by the
 
 ### BASIC
 
-**Path：** /v1/openapi/card/create
+**Path：** /v1/openapi/card/{cardTypeName}/create
 
 **Method：** POST
 
@@ -337,7 +337,7 @@ It should be noted that developers need to confirm the environment called by the
 
 ### BASIC
 
-**Path：** /v1/openapi/card/getCreateOrder
+**Path：** /v1/openapi/card/{cardTypeName}/getCreateOrder
 
 **Method：** POST
 
@@ -434,7 +434,7 @@ It should be noted that developers need to confirm the environment called by the
 
 ### BASIC
 
-**Path：** /v1/openapi/card/getDetail
+**Path：** /v1/openapi/card/{cardTypeName}/getDetail
 
 **Method：** POST
 
@@ -529,7 +529,7 @@ It should be noted that developers need to confirm the environment called by the
 
 ### BASIC
 
-**Path：** /v1/openapi/card/addBalance
+**Path：** /v1/openapi/card/{cardTypeName}/addBalance
 
 **Method：** POST
 
@@ -600,7 +600,7 @@ It should be noted that developers need to confirm the environment called by the
 
 ### BASIC
 
-**Path：** /v1/openapi/card/getTransactionList
+**Path：** /v1/openapi/card/{cardTypeName}/getTransactionList
 
 **Method：** POST
 

@@ -53,7 +53,7 @@ public class SdkApplication {
     }
 
     private static void createCard() throws IOException {
-        final String api = "/v1/openapi/card/create";
+        final String api = "/v1/openapi/card/VISA1/create";
 
         final CreateCardRequest request = new CreateCardRequest();
         request.setClientOrderSn(RandomStringUtils.randomAlphanumeric(32));
@@ -67,22 +67,22 @@ public class SdkApplication {
     }
 
     private static void getCreatOrder() throws IOException {
-        final String api = "/v1/openapi/card/getCreateOrder";
+        final String api = "/v1/openapi/card/VISA1/getCreateOrder";
 
         final GetCreateCardOrderRequest request = new GetCreateCardOrderRequest();
         request.setCardTypeName("VISA1");
         request.setClientOrderSn(null);
-        request.setOrderSn("CC20220511142822BblpkMn1oIfWeTuI");
+        request.setOrderSn("CC20220607163625XnMVN0R50PQyzOZD");
         final String json = JSON.toJSONString(request);
 
         SdkClient.doRequest(api, json, GetCreateCardOrderResponse.class);
     }
 
     private static void getDetail() throws Exception {
-        final String api = "/v1/openapi/card/getDetail";
+        final String api = "/v1/openapi/card/VISA1/getDetail";
 
         final GetCardDetailRequest request = new GetCardDetailRequest();
-        request.setCardNumber("9822042902074393");
+        request.setCardNumber("9003504801710130");
         final String json = JSON.toJSONString(request);
 
         final GetCardDetailResponse response = SdkClient.doRequest(api, json, GetCardDetailResponse.class);
@@ -93,11 +93,11 @@ public class SdkApplication {
     }
 
     private static void addBalance() throws IOException {
-        final String api = "/v1/openapi/card/addBalance";
+        final String api = "/v1/openapi/card/VISA1/addBalance";
 
         final AddCardBalanceRequest request = new AddCardBalanceRequest();
         request.setClientOrderSn(RandomStringUtils.randomAlphanumeric(32));
-        request.setCardNumber("9822042902074393");
+        request.setCardNumber("9003504801710130");
         request.setAmount("100");
         final String json = JSON.toJSONString(request);
 
@@ -105,10 +105,10 @@ public class SdkApplication {
     }
 
     private static void getCardTransactionList() throws IOException {
-        final String api = "/v1/openapi/card/getTransactionList";
+        final String api = "/v1/openapi/card/VISA1/getTransactionList";
 
         final GetCardTransactionListRequest request = new GetCardTransactionListRequest();
-        request.setCardNumber("9822042902074393");
+        request.setCardNumber("9003504801710130");
         request.setPageNum(1);
         request.setPageSize(10);
         request.setStartTime(null);
