@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.ft.domain.ApiHeaders;
 import com.ft.response.BaseApiResponse;
+import com.ft.util.AesUtil;
 import com.ft.util.OkHttpUtil;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Response;
@@ -55,6 +56,10 @@ public class SdkClient {
                 json
         );
         return new HmacUtils(HmacAlgorithms.HMAC_SHA_256, SECRET_KEY).hmacHex(signData);
+    }
+
+    public static String decrypt(String encrypted, String key) throws Exception {
+        return AesUtil.decrypt(encrypted, SECRET_KEY + key);
     }
 
 }

@@ -27,6 +27,8 @@ public enum ApiResponseCode {
 
     COIN_NOT_EXIST(1021, "Coin not exist"),
     EXCHANGE_QUOTATION_EXPIRED(1022, "Exchange quotation expired"),
+    EXCHANGE_MIN(1023, "Exchange minimum amount insufficient"),
+    EXCHANGE_MAX(1024, "Exchange maximum amount exceed"),
 
     CARD_NOT_EXISTS(1031, "Card not exists"),
     CARD_STATUS_ERROR(1032, "Card status error"),

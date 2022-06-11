@@ -3,7 +3,6 @@ package com.ft;
 import com.alibaba.fastjson.JSON;
 import com.ft.request.*;
 import com.ft.response.*;
-import com.ft.util.AesUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -88,7 +87,7 @@ public class SdkApplication {
         final GetCardDetailResponse response = SdkClient.doRequest(api, json, GetCardDetailResponse.class);
         final GetCardDetailResponse.Data data = response.getData();
         final String cvv = data.getCvv();
-        final String decryptedCvv = AesUtil.decrypt(cvv, data.getCardNumber() + data.getTs());
+        final String decryptedCvv = SdkClient.decrypt(cvv, data.getCardNumber() + data.getTs());
         log.info("{} -> {}", cvv, decryptedCvv);
     }
 
