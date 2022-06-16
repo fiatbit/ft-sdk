@@ -1,5 +1,6 @@
 package com.ft.response;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -7,39 +8,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class AddCardBalanceResponse extends BaseApiResponse {
 
-    public AddCardBalanceResponse(Data data) {
-        super();
-        this.data = data;
-    }
-
-    private Data data;
-
-    @Getter
-    @Setter
-    public static class Data {
-
-        /**
-         *
-         */
-        private String clientOrderSn;
-
-        /**
-         *
-         */
-        private String orderSn;
-
-        /**
-         *
-         */
-        private String cardNumber;
-
-        /**
-         *
-         */
-        private String amount;
-
-    }
+    private HandleCardBalanceData data;
 
 }

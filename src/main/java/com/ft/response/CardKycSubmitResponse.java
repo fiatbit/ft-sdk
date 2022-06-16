@@ -7,8 +7,8 @@ import lombok.*;
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateCardResponse extends BaseApiResponse {
+public class CardKycSubmitResponse extends BaseApiResponse {
 
-    private CardOrderPayload data;
+    private CardKycStatusPayload data;
 
 }

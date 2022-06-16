@@ -1,18 +1,15 @@
 package com.ft.response;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.Date;
 
 @Getter
 @Setter
+@Builder(toBuilder = true)
 @NoArgsConstructor
+@AllArgsConstructor
 public class GetCardDetailResponse extends BaseApiResponse {
-
-    public GetCardDetailResponse(Data data) {
-        super();
-        this.data = data;
-    }
 
     private Data data;
 
@@ -51,7 +48,7 @@ public class GetCardDetailResponse extends BaseApiResponse {
         private String freeze;
 
         /**
-         * 有效期
+         * MMYY
          */
         private String expiration;
 
@@ -110,7 +107,7 @@ public class GetCardDetailResponse extends BaseApiResponse {
         /**
          * opening time
          */
-        private Long issueTime;
+        private Date issueTime;
 
         /**
          *

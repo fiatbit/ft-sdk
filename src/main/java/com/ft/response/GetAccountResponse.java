@@ -1,20 +1,15 @@
 package com.ft.response;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
 @Setter
+@Builder(toBuilder = true)
 @NoArgsConstructor
+@AllArgsConstructor
 public class GetAccountResponse extends BaseApiResponse {
-
-    public GetAccountResponse(Data data) {
-        super();
-        this.data = data;
-    }
 
     private Data data;
 
@@ -44,7 +39,7 @@ public class GetAccountResponse extends BaseApiResponse {
     public static class Variety {
 
         /**
-         * eg: BTC, USD, VISA1
+         * eg: "BTC", "USD", "VISA1"
          */
         private String code;
 

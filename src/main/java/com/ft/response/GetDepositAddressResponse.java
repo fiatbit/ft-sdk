@@ -1,18 +1,13 @@
 package com.ft.response;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@Builder(toBuilder = true)
 @NoArgsConstructor
+@AllArgsConstructor
 public class GetDepositAddressResponse extends BaseApiResponse {
-
-    public GetDepositAddressResponse(Data data) {
-        super();
-        this.data = data;
-    }
 
     private Data data;
 

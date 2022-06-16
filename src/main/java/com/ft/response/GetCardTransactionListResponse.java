@@ -1,21 +1,17 @@
 package com.ft.response;
 
 import com.ft.domain.ApiPage;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.util.Date;
 import java.util.List;
 
 @Getter
 @Setter
+@Builder(toBuilder = true)
 @NoArgsConstructor
+@AllArgsConstructor
 public class GetCardTransactionListResponse extends BaseApiResponse {
-
-    public GetCardTransactionListResponse(Data data) {
-        super();
-        this.data = data;
-    }
 
     private Data data;
 
@@ -57,7 +53,27 @@ public class GetCardTransactionListResponse extends BaseApiResponse {
         /**
          *
          */
-        private Long transactionTime;
+        private String transactionCurrencyCode;
+
+        /**
+         *
+         */
+        private Date transactionTime;
+
+        /**
+         * transaction fee
+         */
+        private String feeAmount;
+
+        /**
+         *
+         */
+        private String settleAmount;
+
+        /**
+         *
+         */
+        private String settleCurrencyCode;
 
         /**
          * transaction type

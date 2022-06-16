@@ -1,18 +1,13 @@
 package com.ft.response;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@Builder(toBuilder = true)
 @NoArgsConstructor
+@AllArgsConstructor
 public class ExchangeResponse extends BaseApiResponse {
-
-    public ExchangeResponse(Data data) {
-        super();
-        this.data = data;
-    }
 
     private Data data;
 
@@ -21,12 +16,12 @@ public class ExchangeResponse extends BaseApiResponse {
     public static class Data {
 
         /**
-         *
+         * eg: "BTC", "ETH", "USDT"
          */
         private String asset;
 
         /**
-         * "USD"
+         * eg: "USD"
          */
         private String quoteAsset;
 
