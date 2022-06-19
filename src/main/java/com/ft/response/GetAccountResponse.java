@@ -39,7 +39,7 @@ public class GetAccountResponse extends BaseApiResponse {
     public static class Variety {
 
         /**
-         * eg: "BTC", "USD", "VISA1"
+         * eg: "BTC", "USD", "BIN1"
          */
         private String code;
 

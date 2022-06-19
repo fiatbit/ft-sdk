@@ -18,7 +18,7 @@ public class GetCardDetailResponse extends BaseApiResponse {
     public static class Data {
 
         /**
-         * "VISA1"
+         * "BIN1"
          */
         private String cardTypeName;
 

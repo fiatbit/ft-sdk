@@ -22,7 +22,7 @@ public class CardOrderPayload {
     private String clientOrderSn;
 
     /**
-     * "VISA1"
+     * "BIN1"
      */
     private String cardTypeName;
 

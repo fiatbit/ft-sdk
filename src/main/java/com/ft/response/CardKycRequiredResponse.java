@@ -16,7 +16,7 @@ public class CardKycRequiredResponse extends BaseApiResponse {
     public static class Data {
 
         /**
-         * "eg: AMEX1"
+         * "eg: BIN2"
          */
         private String cardTypeName;
 

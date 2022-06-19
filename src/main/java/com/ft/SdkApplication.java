@@ -21,13 +21,14 @@ import java.util.Objects;
 @Slf4j
 public class SdkApplication {
 
-    private static final String VISA_1 = "VISA1";
-    private static final String AMEX_1 = "AMEX1";
+    private static final String BIN1 = "BIN1";
+    private static final String BIN2 = "BIN2";
 
     /**
-     * @see doc/card_amex1.txt
+     * @see doc/card_BIN2.txt
      */
-    private static final String AMEX_1_NEW_CARD_NUMBER = "800687938859832";
+    private static final String BIN2_NEW_CARD_NUMBER = "800684200779998";
+    private static final String BIN2_NEW_CARD_PWD = "777524";
 
     public static void main(String[] args) throws Exception {
         // account
@@ -37,24 +38,24 @@ public class SdkApplication {
         // getDepositAddress();
         // exchange();
 
-        // card/VISA1, USD
-        // createCard(VISA_1);
-        // getCreatOrder(VISA_1);
-        // getDetail(VISA_1);
-        // addBalance(VISA_1);
-        // getCardTransactionList(VISA_1);
+        // card/BIN1, USD
+        // createCard(BIN1);
+        // getCreatOrder(BIN1);
+        // getDetail(BIN1);
+        // addBalance(BIN1);
+        // getCardTransactionList(BIN1);
 
-        // card/AMEX1, HKD
-        // addCard(AMEX_1);
-        // getDetail(AMEX_1);
-        // enableCard(AMEX_1);
-        // kycRequired(AMEX_1);
-        // kycGet(AMEX_1);
-        // kycUpdate(AMEX_1);
-        // kycUploadPhoto(AMEX_1);
-        // kycSubmit(AMEX_1);
-        // addBalance(AMEX_1);
-        // getCardTransactionList(AMEX_1);
+        // card/BIN2, HKD
+        // addCard(BIN2);
+        // getDetail(BIN2);
+        // enableCard(BIN2);
+        // kycRequired(BIN2);
+        // kycGet(BIN2);
+        // kycUpdate(BIN2);
+        // kycUploadPhoto(BIN2);
+        // kycSubmit(BIN2);
+        // addBalance(BIN2);
+        // getCardTransactionList(BIN2);
     }
 
     private static void getAccount() throws IOException {
@@ -108,8 +109,8 @@ public class SdkApplication {
 
         final GetCreateCardOrderRequest request = new GetCreateCardOrderRequest();
         request.setCardTypeName(cardTypeName);
-        request.setClientOrderSn(null);
-        request.setOrderSn("CC20220607163625XnMVN0R50PQyzOZD");
+        request.setClientOrderSn("RgoYidVQER9J9S1UiUsZX0VDs9FblrGJ");
+        // request.setOrderSn("CC20220607163625XnMVN0R50PQyzOZD");
         final String json = JSON.toJSONString(request);
 
         SdkClient.doRequest(api, json, GetCreateCardOrderResponse.class);
@@ -125,7 +126,7 @@ public class SdkApplication {
         final GetCardDetailResponse response = SdkClient.doRequest(api, json, GetCardDetailResponse.class);
 
         final GetCardDetailResponse.Data data = response.getData();
-        if (Objects.equals(cardTypeName, VISA_1)) {
+        if (Objects.equals(cardTypeName, BIN1)) {
             final String cvv = data.getCvv();
             final String decryptedCvv = SdkClient.decrypt(cvv, data.getCardNumber() + data.getTs());
             log.info("{} -> {}", cvv, decryptedCvv);
@@ -134,10 +135,10 @@ public class SdkApplication {
 
     private static String getCardNumber(String cardTypeName) {
         String cardNumber = null;
-        if (Objects.equals(cardTypeName, VISA_1)) {
+        if (Objects.equals(cardTypeName, BIN1)) {
             cardNumber = "9003504801710130";
-        } else if (Objects.equals(cardTypeName, AMEX_1)) {
-            cardNumber = AMEX_1_NEW_CARD_NUMBER;
+        } else if (Objects.equals(cardTypeName, BIN2)) {
+            cardNumber = BIN2_NEW_CARD_NUMBER;
         }
         return cardNumber;
     }
@@ -172,8 +173,8 @@ public class SdkApplication {
         final String api = String.format("/v1/openapi/card/%s/addCard", cardTypeName);
 
         final AddCardRequest request = new AddCardRequest();
-        request.setCardNumber(AMEX_1_NEW_CARD_NUMBER);
-        request.setPin("065261");
+        request.setCardNumber(BIN2_NEW_CARD_NUMBER);
+        request.setPin(BIN2_NEW_CARD_PWD);
         final String json = JSON.toJSONString(request);
 
         SdkClient.doRequest(api, json, AddCardResponse.class);
@@ -184,7 +185,7 @@ public class SdkApplication {
 
         final EnableCardRequest request = new EnableCardRequest();
         request.setClientOrderSn(RandomStringUtils.randomAlphanumeric(32));
-        request.setCardNumber(AMEX_1_NEW_CARD_NUMBER);
+        request.setCardNumber(BIN2_NEW_CARD_NUMBER);
         request.setInitialAmount("500");
         final String json = JSON.toJSONString(request);
 
@@ -205,7 +206,7 @@ public class SdkApplication {
         final String api = String.format("/v1/openapi/card/%s/kyc/get", cardTypeName);
 
         final CardKycGetRequest request = new CardKycGetRequest();
-        request.setCardNumber(AMEX_1_NEW_CARD_NUMBER);
+        request.setCardNumber(BIN2_NEW_CARD_NUMBER);
         final String json = JSON.toJSONString(request);
 
         SdkClient.doRequest(api, json, CardKycGetResponse.class);
@@ -216,7 +217,7 @@ public class SdkApplication {
 
         // fill real value
         final CardKycUpdateRequest request = new CardKycUpdateRequest();
-        request.setCardNumber(AMEX_1_NEW_CARD_NUMBER);
+        request.setCardNumber(BIN2_NEW_CARD_NUMBER);
         request.setCountryCode(Country2.JP.getCode());
         request.setIdType(IdType.PASSPORT.getValue());
         request.setIdNumber(RandomStringUtils.randomAlphanumeric(10));
@@ -243,7 +244,7 @@ public class SdkApplication {
         final String photo = Base64Utils.encodeToString(IOUtils.toByteArray(png));
 
         final CardKycUploadPhotoRequest request = new CardKycUploadPhotoRequest();
-        request.setCardNumber(AMEX_1_NEW_CARD_NUMBER);
+        request.setCardNumber(BIN2_NEW_CARD_NUMBER);
         request.setUploadPhotoType(KycUploadPhotoType.PASSPORT_SCAN.getValue());
         // request.setUploadPhotoType(KycUploadPhotoType.SIGNATURE.getValue());
         // request.setUploadPhotoType(KycUploadPhotoType.ADDRESS_PROOF.getValue());
@@ -258,7 +259,7 @@ public class SdkApplication {
         final String api = String.format("/v1/openapi/card/%s/kyc/submit", cardTypeName);
 
         final CardKycSubmitRequest request = new CardKycSubmitRequest();
-        request.setCardNumber(AMEX_1_NEW_CARD_NUMBER);
+        request.setCardNumber(BIN2_NEW_CARD_NUMBER);
         final String json = JSON.toJSONString(request);
 
         SdkClient.doRequest(api, json, CardKycSubmitResponse.class);

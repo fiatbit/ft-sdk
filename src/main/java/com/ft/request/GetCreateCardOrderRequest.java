@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 public class GetCreateCardOrderRequest {
 
     /**
-     * optional value: "VISA1"
+     * optional value: "BIN1"
      */
     @NotNull
     private String cardTypeName;

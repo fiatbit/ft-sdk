@@ -74,19 +74,19 @@ It should be noted that developers need to confirm the environment called by the
 | data | object |  | 
 | &ensp;&ensp;&#124;─assetList | array |  | 
 | &ensp;&ensp;&ensp;&ensp;&#124;─ | object |  | 
-| &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─code | string | eg: BTC, USD, VISA1 | 
+| &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─code | string | eg: BTC, USD, BIN1 | 
 | &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─balance | string |  | 
 | &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─available | string |  | 
 | &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─freeze | string |  | 
 | &ensp;&ensp;&#124;─currencyList | array |  | 
 | &ensp;&ensp;&ensp;&ensp;&#124;─ | object |  | 
-| &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─code | string | eg: BTC, USD, VISA1 | 
+| &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─code | string | eg: BTC, USD, BIN1 | 
 | &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─balance | string |  | 
 | &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─available | string |  | 
 | &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─freeze | string |  | 
 | &ensp;&ensp;&#124;─cardNumLimitList | array |  | 
 | &ensp;&ensp;&ensp;&ensp;&#124;─ | object |  | 
-| &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─code | string | eg: BTC, USD, VISA1 | 
+| &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─code | string | eg: BTC, USD, BIN1 | 
 | &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─balance | string |  | 
 | &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─available | string |  | 
 | &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&#124;─freeze | string |  | 
@@ -276,7 +276,7 @@ It should be noted that developers need to confirm the environment called by the
 
 | name         | value | desc |
 | ------------ | ----- | ---- |
-| cardTypeName | VISA1 |      |
+| cardTypeName | BIN1 |      |
 
 **Headers：**
 
@@ -289,7 +289,7 @@ It should be noted that developers need to confirm the environment called by the
 | name | type | desc |
 | ------------ | ------------ | ------------ |
 | clientOrderSn | string | client order number<br><p><br>If there is a value, an order number is processed only once; otherwise, the system automatically generates an order number;<br><p><br>required: no<br>max: 32 | 
-| cardTypeName | string | optional value: "VISA1" | 
+| cardTypeName | string | optional value: "BIN1" | 
 | initialAmount | string | initial amount<br><p><br>min: 10USD | 
 | firstName | string |  | 
 | lastName | string |  | 
@@ -321,7 +321,7 @@ It should be noted that developers need to confirm the environment called by the
 | data                              | object  |                                                              |
 | &ensp;&ensp;&#124;─orderSn        | string  |                                                              |
 | &ensp;&ensp;&#124;─clientOrderSn  | string  |                                                              |
-| &ensp;&ensp;&#124;─cardTypeName   | string  | "VISA1"                                                      |
+| &ensp;&ensp;&#124;─cardTypeName   | string  | "BIN1"                                                      |
 | &ensp;&ensp;&#124;─cardNumber     | string  |                                                              |
 | &ensp;&ensp;&#124;─currencyCode   | string  | card currency code                                           |
 | &ensp;&ensp;&#124;─initialAmount  | string  |                                                              |
@@ -385,7 +385,7 @@ It should be noted that developers need to confirm the environment called by the
 
 | name         | value | desc |
 | ------------ | ----- | ---- |
-| cardTypeName | VISA1 |      |
+| cardTypeName | BIN1 |      |
 
 **Headers：**
 
@@ -397,7 +397,7 @@ It should be noted that developers need to confirm the environment called by the
 
 | name | type | desc |
 | ------------ | ------------ | ------------ |
-| cardTypeName | string | optional value: "VISA1" | 
+| cardTypeName | string | optional value: "BIN1" | 
 | clientOrderSn | string |  | 
 | orderSn | string |  | 
 
@@ -426,7 +426,7 @@ It should be noted that developers need to confirm the environment called by the
 | data                              | object  |                                                              |
 | &ensp;&ensp;&#124;─orderSn        | string  |                                                              |
 | &ensp;&ensp;&#124;─clientOrderSn  | string  |                                                              |
-| &ensp;&ensp;&#124;─cardTypeName   | string  | "VISA1"                                                      |
+| &ensp;&ensp;&#124;─cardTypeName   | string  | "BIN1"                                                      |
 | &ensp;&ensp;&#124;─cardNumber     | string  |                                                              |
 | &ensp;&ensp;&#124;─currencyCode   | string  | card currency code                                           |
 | &ensp;&ensp;&#124;─initialAmount  | string  |                                                              |
@@ -490,7 +490,7 @@ It should be noted that developers need to confirm the environment called by the
 
 | name         | value            | desc |
 | ------------ | ---------------- | ---- |
-| cardTypeName | "VISA1", "AMEX1" |      |
+| cardTypeName | "BIN1", "BIN2" |      |
 
 **Headers：**
 
@@ -525,7 +525,7 @@ It should be noted that developers need to confirm the environment called by the
 | name                              | type    | desc                                                         |
 | --------------------------------- | ------- | ------------------------------------------------------------ |
 | data                              | object  |                                                              |
-| &ensp;&ensp;&#124;─cardTypeName   | string  | "VISA1"                                                      |
+| &ensp;&ensp;&#124;─cardTypeName   | string  | "BIN1"                                                      |
 | &ensp;&ensp;&#124;─cardNumber     | string  |                                                              |
 | &ensp;&ensp;&#124;─currencyCode   | string  | card currency code                                           |
 | &ensp;&ensp;&#124;─balance        | string  | total balance                                                |
@@ -593,7 +593,7 @@ It should be noted that developers need to confirm the environment called by the
 
 | name         | value            | desc |
 | ------------ | ---------------- | ---- |
-| cardTypeName | "VISA1", "AMEX1" |      |
+| cardTypeName | "BIN1", "BIN2" |      |
 
 **Headers：**
 
@@ -682,7 +682,7 @@ It should be noted that developers need to confirm the environment called by the
 
 | name         | value            | desc |
 | ------------ | ---------------- | ---- |
-| cardTypeName | "VISA1", "AMEX1" |      |
+| cardTypeName | "BIN1", "BIN2" |      |
 
 **Headers：**
 
@@ -806,7 +806,7 @@ It should be noted that developers need to confirm the environment called by the
 
 | name         | value   | desc |
 | ------------ | ------- | ---- |
-| cardTypeName | "AMEX1" |      |
+| cardTypeName | "BIN2" |      |
 
 **Headers：**
 
@@ -876,7 +876,7 @@ It should be noted that developers need to confirm the environment called by the
 
 | name         | value   | desc |
 | ------------ | ------- | ---- |
-| cardTypeName | "AMEX1" |      |
+| cardTypeName | "BIN2" |      |
 
 **Headers：**
 
@@ -966,7 +966,7 @@ It should be noted that developers need to confirm the environment called by the
 
 | name         | value   | desc |
 | ------------ | ------- | ---- |
-| cardTypeName | "AMEX1" |      |
+| cardTypeName | "BIN2" |      |
 
 **Headers：**
 
@@ -1002,7 +1002,7 @@ It should be noted that developers need to confirm the environment called by the
 | name                            | type    | desc                                                         |
 | ------------------------------- | ------- | ------------------------------------------------------------ |
 | data                            | object  |                                                              |
-| &ensp;&ensp;&#124;─cardTypeName | string  | "eg: AMEX1"                                                  |
+| &ensp;&ensp;&#124;─cardTypeName | string  | "eg: BIN2"                                                  |
 | &ensp;&ensp;&#124;─idType       | integer | 1 PASSPORT<br>2 ID                                           |
 | &ensp;&ensp;&#124;─passportScan | boolean | Upload a scanned copy of your passport personal information page |
 | &ensp;&ensp;&#124;─signature    | boolean |                                                              |
@@ -1045,7 +1045,7 @@ It should be noted that developers need to confirm the environment called by the
 
 | name         | value   | desc |
 | ------------ | ------- | ---- |
-| cardTypeName | "AMEX1" |      |
+| cardTypeName | "BIN2" |      |
 
 **Headers：**
 
@@ -1172,7 +1172,7 @@ It should be noted that developers need to confirm the environment called by the
 
 | name         | value   | desc |
 | ------------ | ------- | ---- |
-| cardTypeName | "AMEX1" |      |
+| cardTypeName | "BIN2" |      |
 
 **Headers：**
 
@@ -1282,7 +1282,7 @@ It should be noted that developers need to confirm the environment called by the
 
 | name         | value   | desc |
 | ------------ | ------- | ---- |
-| cardTypeName | "AMEX1" |      |
+| cardTypeName | "BIN2" |      |
 
 **Headers：**
 
@@ -1373,7 +1373,7 @@ It should be noted that developers need to confirm the environment called by the
 
 | name         | value   | desc |
 | ------------ | ------- | ---- |
-| cardTypeName | "AMEX1" |      |
+| cardTypeName | "BIN2" |      |
 
 **Headers：**
 

@@ -20,7 +20,7 @@ public class CreateCardRequest {
     private String clientOrderSn;
 
     /**
-     * optional value: "VISA1"
+     * optional value: "BIN1"
      */
     @NotNull
     private String cardTypeName;
