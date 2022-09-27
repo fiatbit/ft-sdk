@@ -54,15 +54,19 @@ public enum ApiResponseCode {
     ORDER_NOT_EXISTS(1052, "Order not exists"),
     ORDER_STATUS_ERROR(1053, "Order status error"),
     ORDER_TIMEOUT(1054, "Order timeout"),
-    ORDER_RECEIVER_NOT_EXISTS(1055, "Order receiver not exists"),
+    ORDER_PLACE_ERROR(1055, "Order place error"),
 
     REMITTANCE_NO_SUITABLE_CHANNEL(1060, "Cannot find a suitable channel, please contact support"),
-    REMITTANCE_AMOUNT_ERROR(1061, "amount error"),
+    REMITTANCE_AMOUNT_ERROR(1061, "Amount error"),
     REMITTANCE_RECEIVER_BIRTHDAY_ERROR(1062, "The birthday is under 18 years of age"),
     REMITTANCE_RECEIVER_DOCUMENT_ERROR(1063, "The documents must be expire later than today"),
-    REMITTANCE_MIN_RECEIVE_AMOUNT_ERROR(1064, "minimum receive amount insufficient"),
-    REMITTANCE_MAX_RECEIVE_AMOUNT_ERROR(1065, "maximum receive amount exceed"),
-    REMITTANCE_MAX_PAYMENT_AMOUNT_ERROR(1066, "maximum payment amount exceed"),
+    REMITTANCE_MIN_RECEIVE_AMOUNT_ERROR(1064, "Minimum receive amount insufficient"),
+    REMITTANCE_MAX_RECEIVE_AMOUNT_ERROR(1065, "Maximum receive amount exceed"),
+    REMITTANCE_MAX_PAYMENT_AMOUNT_ERROR(1066, "Maximum payment amount exceed"),
+    REMITTANCE_RECEIVER_NOT_EXISTS(1067, "Receiver not exists"),
+    REMITTANCE_SENDER_NOT_EXISTS(1068, "Sender not exists"),
+    REMITTANCE_RECEIVER_CURRENCY_COUNTRY_ERROR(1069, "Receiver currency, country error"),
+    REMITTANCE_SENDER_CURRENCY_COUNTRY_ERROR(1070, "Sender currency, country error"),
     ;
 
     private final int code;

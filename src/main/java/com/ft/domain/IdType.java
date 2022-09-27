@@ -8,12 +8,12 @@ public enum IdType {
     /**
      *
      */
-    PASSPORT(1),
+    ID(1),
 
     /**
      *
      */
-    ID(2),
+    PASSPORT(2),
     ;
 
     private final int value;
